@@ -1,0 +1,7 @@
+.menu {
+  display: flex;
+  gap: 12px;
+  background-color: red;
+  list-style: none;
+  text-decoration: none;
+}
