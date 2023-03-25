@@ -1,16 +1,27 @@
-import "./Header.styles.css";
+import "./Header.styles.scss";
+import logoImg from "./../../assets/images/logo.png";
+import { useNavigate } from "react-router-dom";
 
-function Header({ menu }) {
+function Header({ menu = [] }) {
+  const navigate = useNavigate();
+
+  function changePage(path) {
+    navigate(path);
+  }
+
   return (
-    <nav className="menu">
-      {menu.map((menuItem) => {
-        return (
-          <li key={menuItem.id}>
-            <a href={menuItem.path}>{menuItem.title}</a>
-          </li>
-        );
-      })}
-    </nav>
+    <header className="header">
+      <img className="header__logo" src={logoImg} alt="" />
+      <nav className="menu">
+        {menu.map((menuItem) => {
+          return (
+            <li className="menu__item" key={menuItem.id}>
+              <button onClick={() => changePage(menuItem.path)}>{menuItem.title}</button>
+            </li>
+          );
+        })}
+      </nav>
+    </header>
   );
 }
 

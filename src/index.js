@@ -4,4 +4,4 @@ import App from "./App";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
-root.render(<App theme="dark" color="red" />);
+root.render(<App />);

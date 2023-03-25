@@ -1,0 +1,42 @@
+.menu {
+  display: flex;
+  gap: 12px;
+  list-style: none;
+  
+  &__item {
+    position: relative;
+    border-bottom: solid 0px rgb(148, 148, 148);
+    padding-bottom: 4px;
+
+    &:hover {
+      &::after {
+        height: 2px;
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border-radius: 4px;
+      background-color: rgb(193, 193, 193);
+      transition: all .25s;
+    }
+  }
+}
+
+.header {
+  max-width: 1280px;
+  padding: 0px 20px;
+  margin:0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &__logo{
+    object-fit: cover;
+    height: 60px;
+  }
+}
